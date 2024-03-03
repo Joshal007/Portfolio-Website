@@ -1,49 +1,117 @@
-import React from 'react'
+import "../css/projects.css";
 
+import IMG1 from "../assets/LNM_Connect.png";
+import IMG2 from "../assets/Visualizer.png";
+import IMG3 from "../assets/EState-Website.png";
+import IMG4 from "../assets/personal.png";
+import IMG5 from "../assets/tindog.png";
+import IMG6 from "../assets/tasktracker.png";
+import React from "react";
 
-const Projects = () => {
+//Portfolio function
+const Portfolio = () => {
+    const soloProjects = [
+        {
+            id: 1,
+            title: "LNM Connect",
+            img: IMG1,
+            description:
+                "A Website where college students can find all the latest news and updates regarding and important for college.",
+            technologies: "Html | CSS | Javascript | React Js | Nodejs | MongoDB",
+            link: "https://lnmconnect.netlify.app/",
+            github: "https://github.com/Joshal007/LNMConnect",
+        },
+        {
+            id: 2,
+            title: "Pathfinding Visualizer",
+            img: IMG2,
+            description:
+                "Pathfinding Visualizer aimed at helping users understand and visualize how different pathfinding algorithms work. ",
+            technologies: "HTML | CSS | Javascript | React Js",
+            link: "https://joshal007.github.io/Pathfinding-Visualizer/",
+            github: "https://github.com/Joshal007/Pathfinding-Visualizer",
+        },
+        {
+            id: 3,
+            title: "Real EState Website",
+            img: IMG3,
+            description: "It is designed to provide the facility where the customer can easily buy or sell their properties such as land, villa, apartment.",
+            technologies: "Javascript | React Js",
+            link: "https://real-estate-website-frontend-six.vercel.app/",
+            github: "https://github.com/Joshal007/RealEstate_Website",
+        },
+        {
+            id: 4,
+            title: "Personal Portfolio",
+            img: IMG4,
+            description:
+                "Website to show all my skills , education and projects done till date .",
+            technologies: "Html | CSS | JavaScript | React Js",
+            link: "#",
+            github: "https://github.com/Joshal007/Portfolio-Website",
+        },
+        {
+            id: 5,
+            title: "tindog Website",
+            img: IMG5,
+            description:
+                "Tindog is a simple web application that allows users to browse and connect with other dog owners in their area.",
+            technologies: "HTML | CSS | Bootstrap",
+            link: "https://joshal007.github.io/tindog-Website/",
+            github: "https://github.com/Joshal007/tindog-Website",
+        },
+        {
+            id: 6,
+            title: "Task Tracker",
+            img: IMG6,
+            description:
+                "The To-Do List app is a user-friendly task management tool that keeps you organized and productive. Easily add, update, and delete tasks .",
+            technologies: "Html | CSS | Javascript | React Js | Express | PostgreSQL",
+            link: "#",
+            github: "https://github.com/Joshal007/Task-Tracker",
+        },
+    ];
+
     return (
-        <div>
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="..." class="d-block w-100" alt="..." />
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
+        <section id="projects">
+            <h2 className="section_title" >Projects</h2>
+            <span className="section_subtitle" >Recent Work</span>
+            <div className="container portfolio__container">
+                {soloProjects.map((pro) => (
+                    <article className="portfolio__item" key={pro.id}>
+                        <div className="portfolio__item-image">
+                            <img src={pro.img} alt={pro.title} />
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="..." />
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
+                        <div className="portfolio__item-content">
+                            <h3>{pro.title}</h3>
+                            <p>{pro.description}</p>
+                            <p>{pro.technologies}</p>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="..." />
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
+                        <div className="portfolio__item-cta">
+                            <a
+                                href={pro.github}
+                                target="_blank"
+                                className="button button-flex"
+                                rel="noreferrer"
+                            >
+                                GitHub
+                            </a>
+                            <a
+                                href={pro.link}
+                                target="_blank"
+                                className="button button-flex"
+                                rel="noreferrer"
+                            >
+                                Live Demo
+                            </a>
                         </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                    </article>
+                ))}
             </div>
-        </div>
-    )
-}
+            <br />
+            <br />
+        </section>
+    );
+};
 
-export default Projects
+export default Portfolio;

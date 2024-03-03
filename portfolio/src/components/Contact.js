@@ -1,7 +1,10 @@
 import React from 'react'
 import { useRef } from 'react';
 import '../css/contact.css'
-// import emailjs from '@emailjs/browser';
+import emailjs from 'emailjs-com';
+import { MdOutlineMail } from "react-icons/md";
+import { IoLogoLinkedin } from "react-icons/io5";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 const Contact = () => {
 
@@ -10,13 +13,13 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        // emailjs
-        //     .sendForm(
-        //         'service_koj0lpd',
-        //         'template_cngoxfd',
-        //         form.current,
-        //         'U0WGl3KcY-YZ21E4q')
-        // e.target.reset()
+        emailjs
+            .sendForm(
+                'service_koj0lpd',
+                'template_cngoxfd',
+                form.current,
+                'U0WGl3KcY-YZ21E4q')
+        e.target.reset()
     };
     return (
         <div>
@@ -30,36 +33,25 @@ const Contact = () => {
 
                         <div className="contact_info">
                             <div className="contact_card">
-                                <i className="bx bx-mail-send contact_card-icon"></i>
+                                <MdOutlineMail />
 
                                 <h3 className="contact_card-title">E-Mail</h3>
-                                <span className="contact_card-data">harshmanis025@gmail.com</span>
+                                <span className="contact_card-data">joshaljoshi07@gmail.com</span>
 
-                                <a href="mailto:harshmanis025@gmail.com" target="_blank" className="contact_button">Write me<i className="bx bx-right-arrow-alt contact_button-icon"></i>
-                                </a>
-                            </div>
-
-                            {/* <div className="contact_card">
-                                <i className="uil uil-whatsapp contact_card-icon"></i>
-
-                                <h3 className="contact_card-title">WhatsApp</h3>
-                                <span className="contact_card-data">+91-7651979477</span>
-
-                                <a href="https://api.whatsapp.com/send?phone=917651979477&text=Hello, Harsh!" target="_blank" className="contact_button">Write me
-                                    <i className="bx bx-right-arrow-alt contact_button-icon"></i>
+                                <a href="mailto:harshmanis025@gmail.com" target="_blank" className="contact_button">Email me<FaLongArrowAltRight />
                                 </a>
                             </div>
 
                             <div className="contact_card">
-                                <i className="uil uil-calling contact_card-icon"></i>
+                                <IoLogoLinkedin />
 
-                                <h3 className="contact_card-title">Call to</h3>
-                                <span className="contact_card-data">+91-7651979477</span>
+                                <h3 className="contact_card-title">LinkedIn</h3>
+                                <span className="contact_card-data">joshal-joshi</span>
 
-                                <a href="tel:7651979477" target="_blank" className="contact_button">Call me
-                                    <i className="bx bx-right-arrow-alt contact_button-icon"></i>
+                                <a href="https://api.whatsapp.com/send?phone=917651979477&text=Hello, Harsh!" target="_blank" className="contact_button">Let's Connect
+                                    <FaLongArrowAltRight />
                                 </a>
-                            </div> */}
+                            </div>
                         </div>
                     </div>
 
